@@ -2,14 +2,7 @@
 
 The Nelson Community Tool Shed is a fictitious charity that runs a "tool library" for the Nelson region. Members (tool donors) list tools on the website, and beneficiaries (borrowers) use a limited balance of digital tokens to borrow them. This repository holds the WEB701 project work: the design (Milestone One), the comparison of five web frameworks (Milestone Two) and, later, the full website (Milestone Three).
 
-## Links
 
-| Item | Link |
-|---|---|
-| Milestone Two report (Evaluate) | [docs/WEB701_Milestone2_Report.docx](docs/WEB701_Milestone2_Report.docx) |
-| Milestone One report (Design) | [docs/Nelson_Community_Tool_Shed_Documentation.docx](docs/Nelson_Community_Tool_Shed_Documentation.docx) |
-| GitHub Project board (backlog and progress) | https://github.com/users/Siyara11/projects/5/views/1 |
-| Repository | https://github.com/Siyara11/WEB701-Evaluate |
 
 ## What is in this repository
 
