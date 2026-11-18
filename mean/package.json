@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "toolshed-mean",
   "version": "2.0.0",
   "description": "Nelson Community Tool Shed - MEAN prototype (MongoDB, Express, Angular, Node) API with JWT auth",
@@ -6,12 +7,22 @@
   "scripts": {
     "start": "node server.js"
   },
+=======
+  "name": "mean-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+>>>>>>> 950f40d446fc85be0e9130335ca71f3868483d19
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+<<<<<<< HEAD
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.0"
+=======
+    "jsonwebtoken": "^9.0.2"
+>>>>>>> 950f40d446fc85be0e9130335ca71f3868483d19
   }
 }

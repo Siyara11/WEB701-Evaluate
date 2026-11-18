@@ -1,6 +1,11 @@
 fastapi
 uvicorn[standard]
 python-jose[cryptography]
+<<<<<<< HEAD
 bcrypt
 sqlalchemy>=2.0
 email-validator
+=======
+passlib[bcrypt]
+python-multipart
+>>>>>>> 950f40d446fc85be0e9130335ca71f3868483d19

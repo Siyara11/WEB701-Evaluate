@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // GET + PUT /api/auth/me
 // [R1] View and administer your own account. requireUser() returns 401 when
 // there is no valid JWT; the user id always comes from the verified token.
@@ -28,3 +29,19 @@ export async function PUT({ locals, request }) {
   const user = await db.collection('users').findOneAndUpdate({ _id: toId(id) }, { $set: set }, { returnDocument: 'after' });
   return json({ message: 'Account updated', user: publicUser(user) });
 }
+=======
+import { json } from '@sveltejs/kit';
+import { verifyToken } from '$lib/auth.js';
+
+export function GET({ request }) {
+  const token = request.headers.get('authorization')?.replace('Bearer ', '');
+  const payload = token && verifyToken(token);
+
+  if (!payload) return json({ error: 'Unauthorized' }, { status: 401 });
+
+  return json({
+    id: payload.id,
+    role: payload.role
+  });
+}
+>>>>>>> 950f40d446fc85be0e9130335ca71f3868483d19

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "toolshed-sveltekit",
+=======
+  "name": "sveltekit",
+>>>>>>> 950f40d446fc85be0e9130335ca71f3868483d19
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -20,7 +24,13 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+<<<<<<< HEAD
     "jsonwebtoken": "^9.0.3",
     "mongodb": "^6.10.0"
   }
 }
+=======
+    "jsonwebtoken": "^9.0.3"
+  }
+}
+>>>>>>> 950f40d446fc85be0e9130335ca71f3868483d19

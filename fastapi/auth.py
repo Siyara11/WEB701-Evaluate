@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # auth.py
 # ---------------------------------------------------------------------------
 # [R1][R2] Password hashing and JWT helpers for the FastAPI prototype.
@@ -32,10 +33,30 @@ def hash_password(password: str) -> str:
     # bcrypt only uses the first 72 bytes; gensalt() adds a random salt
     return bcrypt.hashpw(password.encode("utf-8")[:72], bcrypt.gensalt()).decode("utf-8")
 
+=======
+from datetime import datetime, timedelta
+from jose import jwt, JWTError
+import bcrypt
+from fastapi import Depends, HTTPException
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+
+SECRET_KEY = "supersecretkey12345"
+ALGORITHM = "HS256"
+
+# HTTPBearer gives Swagger a single "Value" field for pasting the token
+security = HTTPBearer()
+
+users = []  # in-memory store
+
+def hash_password(p: str) -> str:
+    pwd_bytes = p.encode("utf-8")[:72]
+    return bcrypt.hashpw(pwd_bytes, bcrypt.gensalt()).decode("utf-8")
+>>>>>>> 950f40d446fc85be0e9130335ca71f3868483d19
 
 def verify_password(plain: str, hashed: str) -> bool:
     try:
         return bcrypt.checkpw(plain.encode("utf-8")[:72], hashed.encode("utf-8"))
+<<<<<<< HEAD
     except ValueError:
         return False
 
@@ -73,3 +94,22 @@ def require_role(*roles: str):
             raise HTTPException(status.HTTP_403_FORBIDDEN, f"Only {' or '.join(roles)} accounts can do this")
         return user
     return checker
+=======
+    except Exception:
+        return False
+
+def create_token(user_id: int, role: str) -> str:
+    payload = {
+        "sub": str(user_id),
+        "role": role,
+        "exp": datetime.utcnow() + timedelta(hours=1)
+    }
+    return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+
+async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    token = credentials.credentials
+    try:
+        return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+    except JWTError:
+        raise HTTPException(status_code=401, detail="Invalid token")
+>>>>>>> 950f40d446fc85be0e9130335ca71f3868483d19
