@@ -1,0 +1,11 @@
+# Dependencies and build output
+node_modules/
+dist/
+.svelte-kit/
+venv/
+__pycache__/
+bin/
+obj/
+# Local secrets and local database files
+.env
+*.db

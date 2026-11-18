@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Responsive layout on phones, tablets and desktops -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nelson Community Tool Shed</title>
+    <meta name="description" content="Borrow and share tools in the Nelson community using tokens." />
+
+    <!-- [PWA] The web app manifest makes the site installable to a home screen -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- [PWA] Colour of the browser toolbar / status bar when installed -->
+    <meta name="theme-color" content="#1f6f43" />
+    <!-- [PWA] iOS Safari does not read every manifest field, so these tags are needed too -->
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Tool Shed" />
+    <link rel="icon" type="image/png" href="/icons/icon-192.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

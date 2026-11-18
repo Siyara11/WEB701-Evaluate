@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+python-jose[cryptography]
+bcrypt
+sqlalchemy>=2.0
+email-validator
